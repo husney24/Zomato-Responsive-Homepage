@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Card with Box Shadow</title>
+  <style>
+    .card {
+      display: flex;
+      max-width: 400px;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .card-img {
+      width: 130px;
+      height: 130px;
+    }
+
+    .card-content {
+      padding: 10px;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-details {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    h1{
+      text-align: center;
+      padding: 100px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .card {
+        max-width: 90%;
+      }
+
+      .card-img {
+        width: 30%;
+      }
+
+      h1{
+      text-align: center;
+      font-size: x-small;
+      padding: 40px;
+    }
+
+    }
+  </style>
+</head>
+<body>
+  <h1>Responsive Card without bootstrap haha!</h1>
+  <div class="card">
+    <img class="card-img" src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80" alt="Card Image">
+    <div class="card-content">
+      <div class="card-title">Card Title</div>
+      <div class="card-details">Card Details Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    </div>
+  </div>
+</body>
+</html>
