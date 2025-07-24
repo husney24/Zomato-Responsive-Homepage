@@ -4,205 +4,409 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Zomato Homepage</title>
+  <title>Zomato - Discover Great Food</title>
   <link rel="icon" href="letter-e.png" type="image/png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="bg">
-    <header>
-      <nav>
-        <div class="nav-links">
-          <!-- Add your navigation links here -->
-        </div>
-        <div class="buttons">
-          <button class="login">Login</button>
-          <button class="signup">Create an account</button>
-        </div>
-      </nav>
-    </header>
-    <!-- Rest of the content -->
-
-    <div class="content">
-      <img class="logo" src="letter-e.png" alt="Logo" />
-      <h1>Find the best restaurants, cafes, & bars</h1>
-      <div class="input-container">
-        <select class="dropdown">
-          <option value="kolkata">Kolkata</option>
-          <option value="delhi">Delhi</option>
-          <option value="mumbai">Mumbai</option>
-          <option value="bangalore">Bangalore</option>
-          <option value="chennai">Chennai</option>
-          <option value="hyderabad">Hyderabad</option>
-          <option value="ahmedabad">Ahmedabad</option>
-          <option value="pune">Pune</option>
-          <option value="surat">Surat</option>
-          <option value="jaipur">Jaipur</option>
-          <option value="lucknow">Lucknow</option>
-          <option value="kanpur">Kanpur</option>
-          <option value="nagpur">Nagpur</option>
-          <!-- Add more options -->
-        </select>
-
-        <div class="search-container">
-          <i class="fa fa-search"></i>
-          <input type="text" id="search" placeholder="Search for restaurants" />
-        </div>
-
-        <!-- <input type="text" class="search" placeholder="Search for restaurants"> -->
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="letter-e.png" alt="Zomato" class="nav-logo">
+        <span class="brand-text">Zomato</span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-mobile-alt me-1"></i>Add Restaurant</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-briefcase me-1"></i>For Business</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-primary me-2">Log In</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-primary">Sign Up</button>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <div class="txt">
-    <h1>Quick Searches</h1>
-    <p>Discover restaurants by type of meal</p>
-  </div>
-
-  <!-- -------using bootstrap ------------>
-
-  <div class="card-container">
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1 class="hero-title">
+            Discover the best food & drinks in 
+            <span class="text-gradient">your city</span>
+          </h1>
+          <p class="hero-subtitle">
+            Find restaurants, cafes, bars, and more with the best food around you
+          </p>
+          
+          <!-- Search Section -->
+          <div class="search-wrapper">
+            <div class="search-container">
+              <div class="location-selector">
+                <i class="fas fa-map-marker-alt"></i>
+                <select class="form-select location-dropdown">
+                  <option value="kolkata">Kolkata</option>
+                  <option value="delhi">Delhi</option>
+                  <option value="mumbai">Mumbai</option>
+                  <option value="bangalore">Bangalore</option>
+                  <option value="chennai">Chennai</option>
+                  <option value="hyderabad">Hyderabad</option>
+                  <option value="pune">Pune</option>
+                  <option value="ahmedabad">Ahmedabad</option>
+                </select>
+              </div>
+              
+              <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="form-control search-input" 
+                       placeholder="Search for restaurant, cuisine or a dish">
+                <button class="btn btn-primary search-btn">Search</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Popular Searches -->
+          <div class="popular-searches">
+            <span class="popular-label">Popular:</span>
+            <span class="popular-tag">Biryani</span>
+            <span class="popular-tag">Pizza</span>
+            <span class="popular-tag">Burger</span>
+            <span class="popular-tag">Chinese</span>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <div class="service-icon delivery-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3>Order Online</h3>
+            <p>Stay home and order to your doorstep</p>
+          </div>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <div class="service-icon dining-icon">
+              <i class="fas fa-coffee"></i>
+            </div>
+            <h3>Dining</h3>
+            <p>View the city's favourite dining venues</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <div class="service-icon nightlife-icon">
+              <i class="fas fa-cocktail"></i>
+            </div>
+            <h3>Nightlife</h3>
+            <p>Explore the city's top nightlife outlets</p>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
+  <!-- Collections Section -->
+  <section class="collections-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Collections</h2>
+        <p>Explore curated lists of top restaurants, cafes, pubs, and bars in your city</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="collection-card">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Trending This Week">
+            <div class="collection-overlay">
+              <h4>Trending This Week</h4>
+              <p>15 Places</p>
+            </div>
+          </div>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+        <div class="col-lg-3 col-md-6">
+          <div class="collection-card">
+            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Best of Street Food">
+            <div class="collection-overlay">
+              <h4>Best of Street Food</h4>
+              <p>32 Places</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="collection-card">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fine Dining">
+            <div class="collection-overlay">
+              <h4>Fine Dining</h4>
+              <p>18 Places</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="collection-card">
+            <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Rooftop Restaurants">
+            <div class="collection-overlay">
+              <h4>Rooftop Restaurants</h4>
+              <p>12 Places</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
+  <!-- Popular Restaurants Section -->
+  <section class="restaurants-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular Restaurants</h2>
+        <p>Discover restaurants based on your location</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="restaurant-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Restaurant">
+              <div class="offer-badge">40% OFF</div>
+              <button class="like-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="restaurant-header">
+                <h4>The Spice Garden</h4>
+                <div class="rating">
+                  <span class="rating-value">4.2</span>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <p class="cuisine-type">North Indian, Mughlai</p>
+              <div class="restaurant-meta">
+                <span class="price">₹400 for two</span>
+                <span class="delivery-time">
+                  <i class="fas fa-clock"></i> 32 mins
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="restaurant-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Restaurant">
+              <div class="offer-badge promoted">PROMOTED</div>
+              <button class="like-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="restaurant-header">
+                <h4>Pizza Corner</h4>
+                <div class="rating">
+                  <span class="rating-value">4.5</span>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <p class="cuisine-type">Italian, Continental</p>
+              <div class="restaurant-meta">
+                <span class="price">₹300 for two</span>
+                <span class="delivery-time">
+                  <i class="fas fa-clock"></i> 25 mins
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="restaurant-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Restaurant">
+              <div class="offer-badge">30% OFF</div>
+              <button class="like-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="restaurant-header">
+                <h4>Burger Junction</h4>
+                <div class="rating">
+                  <span class="rating-value">4.0</span>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <p class="cuisine-type">Fast Food, American</p>
+              <div class="restaurant-meta">
+                <span class="price">₹250 for two</span>
+                <span class="delivery-time">
+                  <i class="fas fa-clock"></i> 20 mins
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="restaurant-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Restaurant">
+              <button class="like-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="restaurant-header">
+                <h4>Sushi Express</h4>
+                <div class="rating">
+                  <span class="rating-value">4.3</span>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <p class="cuisine-type">Japanese, Asian</p>
+              <div class="restaurant-meta">
+                <span class="price">₹800 for two</span>
+                <span class="delivery-time">
+                  <i class="fas fa-clock"></i> 40 mins
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="restaurant-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Restaurant">
+              <div class="offer-badge">25% OFF</div>
+              <button class="like-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="restaurant-header">
+                <h4>Taco Fiesta</h4>
+                <div class="rating">
+                  <span class="rating-value">4.1</span>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <p class="cuisine-type">Mexican, Continental</p>
+              <div class="restaurant-meta">
+                <span class="price">₹350 for two</span>
+                <span class="delivery-time">
+                  <i class="fas fa-clock"></i> 28 mins
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="restaurant-card">
+            <div class="card-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Restaurant">
+              <button class="like-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="restaurant-header">
+                <h4>Café Mocha</h4>
+                <div class="rating">
+                  <span class="rating-value">4.4</span>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <p class="cuisine-type">Cafe, Beverages, Desserts</p>
+              <div class="restaurant-meta">
+                <span class="price">₹200 for two</span>
+                <span class="delivery-time">
+                  <i class="fas fa-clock"></i> 15 mins
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-brand">
+            <img src="letter-e.png" alt="Zomato" class="footer-logo">
+            <span class="footer-brand-text">Zomato</span>
+          </div>
+          <p class="footer-description">
+            Discover the best food & drinks in your city
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5>About Zomato</h5>
+          <ul class="footer-links">
+            <li><a href="#">Who We Are</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Work With Us</a></li>
+            <li><a href="#">Investor Relations</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5>For Foodies</h5>
+          <ul class="footer-links">
+            <li><a href="#">Code of Conduct</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Blogger Help</a></li>
+            <li><a href="#">Mobile Apps</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5>For Restaurants</h5>
+          <ul class="footer-links">
+            <li><a href="#">Partner With Us</a></li>
+            <li><a href="#">Apps For You</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>For Enterprises</h5>
+          <ul class="footer-links">
+            <li><a href="#">Zomato For Work</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; 2024 Zomato. All rights reserved.</p>
       </div>
     </div>
+  </footer>
 
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
