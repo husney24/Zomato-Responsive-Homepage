@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiPhone, FiMapPin, FiMenu, FiX } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -7,6 +8,7 @@ import './Header.scss';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,11 +20,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Areas', href: '#areas' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'About', href: '/about' },
+    { name: 'Emergency', href: '/emergency' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   const toggleMobileMenu = () => {
@@ -95,12 +97,12 @@ const Header = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                   >
-                    <a 
-                      href={item.href}
-                      className="nav-link"
+                    <Link 
+                      to={item.href}
+                      className={`nav-link ${location.pathname === item.href ? 'active' : ''}`}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
@@ -151,12 +153,13 @@ const Header = () => {
                   animate={isMobileMenuOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <a 
-                    href={item.href}
+                  <Link 
+                    to={item.href}
+                    className={location.pathname === item.href ? 'active' : ''}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
             </ul>

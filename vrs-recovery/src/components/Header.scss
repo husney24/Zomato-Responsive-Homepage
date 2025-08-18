@@ -182,7 +182,8 @@ $transition: all 0.3s ease;
           transition: $transition;
           letter-spacing: 0.3px;
 
-          &:hover {
+          &:hover,
+          &.active {
             color: $primary-color;
           }
 
@@ -198,7 +199,8 @@ $transition: all 0.3s ease;
             border-radius: 2px;
           }
 
-          &:hover::after {
+          &:hover::after,
+          &.active::after {
             width: 100%;
           }
         }
@@ -283,9 +285,16 @@ $transition: all 0.3s ease;
             border-bottom: 1px solid #eee;
             transition: $transition;
 
-            &:hover {
+            &:hover,
+            &.active {
               color: $primary-color;
               padding-left: 10px;
+            }
+
+            &.active {
+              background: rgba(193, 39, 41, 0.05);
+              border-radius: 8px;
+              padding: 10px;
             }
           }
         }
