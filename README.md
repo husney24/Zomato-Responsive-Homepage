@@ -1,35 +1,112 @@
-haha!
+# 🍽️ Zomato Homepage - Modern Redesign
 
-# Zomato Responsive Homepage
+A fully responsive Zomato-inspired homepage built from scratch with modern design and cool features.
 
-This is a responsive homepage for Zomato, a food delivery and restaurant discovery platform.
+## What's Inside
 
-## Features
+### Design Stuff
+- Clean, modern look with smooth animations
+- Works great on mobile, tablet, and desktop
+- Custom color scheme matching Zomato's vibe
+- Background patterns for visual interest
+- No Bootstrap - just pure CSS skills
 
-- Responsive design: The homepage is fully responsive and adjusts to different screen sizes.
-- Quick Searches: Discover restaurants by type of meal.
-- Search for restaurants: Use the dropdown and search input to find restaurants in specific cities.
+### Cool Features
+- Full-screen hero section with search
+- Quick access cards with images
+- Restaurant collections gallery
+- Popular cuisines section
+- App download section
+- Login and signup pages
+- Responsive navigation with mobile menu
+- Hover effects everywhere
 
-## Screenshots
+## Tech Stack
 
-![Desktop view](https://github.com/husney24/Edureka-Class/assets/86011042/02068ea9-c9ea-4aa0-83f1-e92261a522ed)
-![image](https://github.com/husney24/Edureka-Class/assets/86011042/49ec6455-d121-4ddf-a47c-d6f44c92e002)
-![Mobile view](https://github.com/husney24/Edureka-Class/assets/86011042/8b7b6abf-4b39-4d58-8665-c422316ab639)
+- HTML5
+- CSS3 (Flexbox, Grid, Animations)
+- Vanilla JavaScript
+- Font Awesome icons
+- Google Fonts (Poppins)
+- Unsplash images
 
+## Pages
 
+- `index.html` - Main homepage
+- `login.html` - Login page with social options
+- `signup.html` - Signup page with form validation
+- `card.html` - Card design showcase
+- `styles.css` - All the styling magic
 
-## Technologies Used
+## How to Run
 
-- HTML
-- CSS
-- Bootstrap 
-- etc.
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/husney24/Zomato-Responsive-Homepage.git
+   ```
 
-## How to Use
+2. Go to the Zomato folder:
+   ```bash
+   cd Zomato-Responsive-Homepage/Zomato
+   ```
 
-1. Clone this repository.
-2. Open `index.html` in your web browser.
+3. Open `index.html` in your browser or use Live Server
+
+That's it!
+
+## Features Breakdown
+
+**Hero Section**
+- Full viewport height
+- Parallax background
+- Dual search (location + restaurant)
+- Glassmorphism navbar
+
+**Quick Access Cards**
+- Order Online, Dining Out, Nightlife
+- Background images with overlays
+- Interactive badges and icons
+
+**Collections**
+- Curated restaurant lists
+- Image cards with hover effects
+
+**Cuisines**
+- Grid of popular food categories
+- Clean card designs
+
+**Authentication**
+- Modern login/signup pages
+- Password strength indicator
+- Social login options
+- Form validation
+
+## What's New (2025 Update)
+
+- Completely redesigned from the old version
+- Removed Bootstrap dependency
+- Added authentication pages
+- Better animations and interactions
+- Improved mobile experience
+- SVG background patterns
+- Modern color palette
+
+## Color Palette
+
+- Primary: #E23744 (Zomato Red)
+- Primary Dark: #CB202D
+- Secondary: #FFB800
+- Text: #1C1C1C
+- Background: #F8F8F8
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+MIT License - do whatever you want with it
+
+## Author
+
+husney24
+
+---
+
+Built with code and coffee ☕

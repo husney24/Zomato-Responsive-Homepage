@@ -4,205 +4,368 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Zomato Homepage</title>
-  <link rel="icon" href="letter-e.png" type="image/png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>Zomato - Discover the best food & drinks</title>
+  <link rel="icon" href="https://b.zmtcdn.com/images/logo/zomato_logo_2017.png" type="image/png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="bg">
-    <header>
-      <nav>
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" alt="Zomato" class="logo-img">
+        </div>
+        
         <div class="nav-links">
-          <!-- Add your navigation links here -->
-        </div>
-        <div class="buttons">
-          <button class="login">Login</button>
-          <button class="signup">Create an account</button>
-        </div>
-      </nav>
-    </header>
-    <!-- Rest of the content -->
-
-    <div class="content">
-      <img class="logo" src="letter-e.png" alt="Logo" />
-      <h1>Find the best restaurants, cafes, & bars</h1>
-      <div class="input-container">
-        <select class="dropdown">
-          <option value="kolkata">Kolkata</option>
-          <option value="delhi">Delhi</option>
-          <option value="mumbai">Mumbai</option>
-          <option value="bangalore">Bangalore</option>
-          <option value="chennai">Chennai</option>
-          <option value="hyderabad">Hyderabad</option>
-          <option value="ahmedabad">Ahmedabad</option>
-          <option value="pune">Pune</option>
-          <option value="surat">Surat</option>
-          <option value="jaipur">Jaipur</option>
-          <option value="lucknow">Lucknow</option>
-          <option value="kanpur">Kanpur</option>
-          <option value="nagpur">Nagpur</option>
-          <!-- Add more options -->
-        </select>
-
-        <div class="search-container">
-          <i class="fa fa-search"></i>
-          <input type="text" id="search" placeholder="Search for restaurants" />
+          <a href="#" class="nav-link">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Get the App</span>
+          </a>
+          <a href="#" class="nav-link">Investor Relations</a>
+          <a href="#" class="nav-link">Add restaurant</a>
+          <a href="login.html" class="nav-link">Log in</a>
+          <a href="signup.html" class="nav-link signup-btn">Sign up</a>
         </div>
 
-        <!-- <input type="text" class="search" placeholder="Search for restaurants"> -->
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="logo-large">
+        <i class="fas fa-utensils"></i>
+        <h1>zomato</h1>
+      </div>
+      <p class="hero-subtitle">Discover the best food & drinks in your city</p>
+      
+      <!-- Search Bar -->
+      <div class="search-wrapper">
+        <div class="location-input">
+          <i class="fas fa-map-marker-alt"></i>
+          <input type="text" placeholder="Enter your delivery location" class="location-field">
+          <button class="detect-location">
+            <i class="fas fa-crosshairs"></i>
+          </button>
+        </div>
+        
+        <div class="search-input">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search for restaurant, cuisine or a dish" class="search-field">
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="txt">
-    <h1>Quick Searches</h1>
-    <p>Discover restaurants by type of meal</p>
-  </div>
+    <!-- Scroll Indicator -->
+    <!-- Removed for cleaner design -->
+  </section>
 
-  <!-- -------using bootstrap ------------>
-
-  <div class="card-container">
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
+  <!-- Quick Access Cards -->
+  <section class="quick-access">
+    <div class="container">
+      <div class="quick-cards-grid">
+        <div class="quick-card" data-category="delivery">
+          <div class="quick-card-image">
+            <img src="https://images.unsplash.com/photo-1526367790999-0150786686a2?w=600&q=80" alt="Order Online">
+            <div class="quick-card-overlay">
+              <div class="quick-card-icon">
+                <i class="fas fa-shopping-bag"></i>
+              </div>
+            </div>
+          </div>
+          <div class="quick-card-content">
+            <h3>Order Online</h3>
+            <p>Stay home and order to your doorstep</p>
+            <div class="quick-card-footer">
+              <span class="quick-card-badge">
+                <i class="fas fa-bolt"></i> Fast Delivery
+              </span>
+              <i class="fas fa-arrow-right quick-card-arrow"></i>
+            </div>
+          </div>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+
+        <div class="quick-card" data-category="dining">
+          <div class="quick-card-image">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Dining Out">
+            <div class="quick-card-overlay">
+              <div class="quick-card-icon">
+                <i class="fas fa-utensils"></i>
+              </div>
+            </div>
+          </div>
+          <div class="quick-card-content">
+            <h3>Dining Out</h3>
+            <p>View the best restaurants & dining options near you</p>
+            <div class="quick-card-footer">
+              <span class="quick-card-badge">
+                <i class="fas fa-star"></i> Top Rated
+              </span>
+              <i class="fas fa-arrow-right quick-card-arrow"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="quick-card" data-category="nightlife">
+          <div class="quick-card-image">
+            <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=600&q=80" alt="Nightlife">
+            <div class="quick-card-overlay">
+              <div class="quick-card-icon">
+                <i class="fas fa-cocktail"></i>
+              </div>
+            </div>
+          </div>
+          <div class="quick-card-content">
+            <h3>Nightlife & Clubs</h3>
+            <p>Explore the best bars, pubs & nightlife spots</p>
+            <div class="quick-card-footer">
+              <span class="quick-card-badge">
+                <i class="fas fa-moon"></i> Open Late
+              </span>
+              <i class="fas fa-arrow-right quick-card-arrow"></i>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
+  <!-- Collections Section -->
+  <section class="collections">
+    <div class="container">
+      <div class="section-header">
+        <h2>Collections</h2>
+        <p>Explore curated lists of top restaurants, cafes, pubs, and bars</p>
+      </div>
+
+      <div class="collections-grid">
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Trending Restaurants">
+          <div class="collection-overlay">
+            <h3>Trending This Week</h3>
+            <p>15 Places <i class="fas fa-chevron-right"></i></p>
+          </div>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80" alt="Best Bars">
+          <div class="collection-overlay">
+            <h3>Best Bars & Pubs</h3>
+            <p>12 Places <i class="fas fa-chevron-right"></i></p>
+          </div>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="Romantic Dining">
+          <div class="collection-overlay">
+            <h3>Romantic Dining</h3>
+            <p>10 Places <i class="fas fa-chevron-right"></i></p>
+          </div>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Best Breakfast">
+          <div class="collection-overlay">
+            <h3>Great Breakfast Places</h3>
+            <p>18 Places <i class="fas fa-chevron-right"></i></p>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
+  <!-- Popular Cuisines -->
+  <section class="cuisines">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular Cuisines Near You</h2>
+      </div>
+
+      <div class="cuisines-grid">
+        <div class="cuisine-card">
+          <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80" alt="Burger">
+          <h4>Burgers</h4>
+          <p>128 places</p>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+
+        <div class="cuisine-card">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80" alt="Pizza">
+          <h4>Pizza</h4>
+          <p>95 places</p>
+        </div>
+
+        <div class="cuisine-card">
+          <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&q=80" alt="Chinese">
+          <h4>Chinese</h4>
+          <p>156 places</p>
+        </div>
+
+        <div class="cuisine-card">
+          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=80" alt="Biryani">
+          <h4>Biryani</h4>
+          <p>142 places</p>
+        </div>
+
+        <div class="cuisine-card">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80" alt="Pancakes">
+          <h4>Breakfast</h4>
+          <p>87 places</p>
+        </div>
+
+        <div class="cuisine-card">
+          <img src="https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=400&q=80" alt="Desserts">
+          <h4>Desserts</h4>
+          <p>73 places</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Download Section -->
+  <section class="app-download">
+    <div class="container">
+      <div class="app-content">
+        <div class="app-image">
+          <img src="https://b.zmtcdn.com/data/o2_assets/f773629053b24263e69f601925790f301680693809.png" alt="Zomato App">
+        </div>
+        <div class="app-info">
+          <h2>Get the Zomato app</h2>
+          <p>We will send you a link, open it on your phone to download the app</p>
+          
+          <div class="app-download-options">
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="contact" value="email" checked>
+                <span>Email</span>
+              </label>
+              <label>
+                <input type="radio" name="contact" value="phone">
+                <span>Phone</span>
+              </label>
+            </div>
+            
+            <div class="email-input-group">
+              <input type="email" placeholder="Enter your email">
+              <button class="share-link-btn">Share App Link</button>
+            </div>
+          </div>
+
+          <div class="download-badges">
+            <p>Download app from</p>
+            <div class="badges">
+              <a href="#" class="badge">
+                <i class="fab fa-google-play"></i>
+                <div>
+                  <small>GET IT ON</small>
+                  <strong>Google Play</strong>
+                </div>
+              </a>
+              <a href="#" class="badge">
+                <i class="fab fa-apple"></i>
+                <div>
+                  <small>Download on the</small>
+                  <strong>App Store</strong>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>About Zomato</h3>
+          <ul>
+            <li><a href="#">Who We Are</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Work With Us</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="#">Report Fraud</a></li>
+          </ul>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+
+        <div class="footer-column">
+          <h3>For Restaurants</h3>
+          <ul>
+            <li><a href="#">Partner With Us</a></li>
+            <li><a href="#">Apps For You</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Learn More</h3>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Social Links</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
+      <div class="footer-bottom">
+        <p>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2025 © Zomato™ Ltd. All rights reserved.</p>
       </div>
     </div>
+  </footer>
 
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
-            class="img-fluid rounded-start" alt="..." />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // Add animations on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.quick-card, .collection-card, .cuisine-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 
 </html>

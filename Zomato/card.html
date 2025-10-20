@@ -3,69 +3,914 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Card with Box Shadow</title>
+  <title>Modern Cards Showcase - 2025</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
   <style>
-    .card {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
       display: flex;
-      max-width: 400px;
-      margin: 20px auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-      border-radius: 8px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeInDown 0.8s ease;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.2rem;
+      margin-bottom: 50px;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    .cards-container {
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    /* Base Card Style */
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #E23744, #FFB800);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Style 1 - Horizontal Classic */
+    .card-horizontal {
+      display: flex;
+    }
+
+    /* Style 2 - Overlay Card */
+    .card-overlay {
+      display: flex;
+      flex-direction: column;
+      height: 450px;
+    }
+
+    .card-overlay .card-img-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .card-overlay .card-img-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.9) 100%);
+    }
+
+    .card-overlay .card-content {
+      position: relative;
+      z-index: 2;
+      margin-top: auto;
+      color: white;
+    }
+
+    .card-overlay .card-title,
+    .card-overlay .card-details,
+    .card-overlay .card-subtitle {
+      color: white;
+    }
+
+    .card-overlay .card-footer {
+      border-top-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Style 3 - Minimal Bordered */
+    .card-minimal {
+      display: flex;
+      flex-direction: column;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .card-minimal .card-img-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 20px 20px 0 20px;
+    }
+
+    .card-minimal .card-content {
+      color: white;
+    }
+
+    .card-minimal .card-title,
+    .card-minimal .card-details,
+    .card-minimal .card-subtitle {
+      color: white;
+    }
+
+    .card-minimal .card-footer {
+      border-top-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Style 4 - Split Card */
+    .card-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 320px;
+    }
+
+    .card-split .card-img-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .card-split .card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Style 5 - Stacked Info */
+    .card-stacked {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-stacked .card-img-wrapper {
+      height: 280px;
+    }
+
+    .card-stacked .card-header {
+      background: linear-gradient(135deg, #E23744, #CB202D);
+      color: white;
+      padding: 20px;
+      margin: -20px -20px 20px -20px;
+    }
+
+    .card-stacked .card-header .card-title,
+    .card-stacked .card-header .card-subtitle {
+      color: white;
+    }
+
+    /* Style 6 - Compact Horizontal */
+    .card-compact {
+      display: flex;
+      height: 180px;
+    }
+
+    .card-compact .card-img-wrapper {
+      width: 200px;
+      flex-shrink: 0;
+    }
+
+    .card-compact .card-content {
+      padding: 20px;
+    }
+
+    .card-compact .card-details {
+      font-size: 0.85rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
+    .card-compact .card-actions {
+      flex-direction: row;
+      margin-top: 10px;
+    }
+
+    /* Style 7 - Image Top Minimalist */
+    .card-minimalist {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid #e8e8e8;
+    }
+
+    .card-minimalist:hover {
+      border-color: #E23744;
+    }
+
+    .card-minimalist .card-img-wrapper {
+      height: 200px;
+      position: relative;
+    }
+
+    .card-minimalist .card-badge {
+      background: white;
+      color: #E23744;
+      border: 2px solid #E23744;
+    }
+
+    .card-img-wrapper {
+      position: relative;
+      width: 180px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
     .card-img {
-      width: 130px;
-      height: 130px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover .card-img {
+      transform: scale(1.15) rotate(2deg);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #E23744;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(226, 55, 68, 0.4);
     }
 
     .card-content {
-      padding: 10px;
+      padding: 24px;
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-header {
+      margin-bottom: 12px;
     }
 
     .card-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 10px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1C1C1C;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .card-subtitle {
+      font-size: 0.9rem;
+      color: #696969;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-subtitle i {
+      color: #FFB800;
     }
 
     .card-details {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #555;
+      line-height: 1.6;
+      margin: 12px 0;
     }
 
-    h1{
-      text-align: center;
-      padding: 100px;
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #e8e8e8;
     }
 
+    .card-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .rating-badge {
+      background: #48C479;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .rating-count {
+      font-size: 0.85rem;
+      color: #9C9C9C;
+    }
+
+    .card-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #E23744;
+    }
+
+    /* Modern Card Style 2 - Vertical */
+    .card-vertical {
+      flex-direction: column;
+      max-width: 100%;
+    }
+
+    .card-vertical .card-img-wrapper {
+      width: 100%;
+      height: 220px;
+    }
+
+    /* Glassmorphism Card */
+    .card-glass {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .card-glass .card-title,
+    .card-glass .card-details {
+      color: white;
+    }
+
+    .card-glass .card-subtitle {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .card-glass .card-footer {
+      border-top-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Action Buttons */
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #E23744, #CB202D);
+      color: white;
+      box-shadow: 0 4px 15px rgba(226, 55, 68, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(226, 55, 68, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #E23744;
+      border: 2px solid #E23744;
+    }
+
+    .btn-secondary:hover {
+      background: #E23744;
+      color: white;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile Responsive */
     @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+        padding: 0 20px;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+        padding: 0 20px;
+      }
+
+      .cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
       .card {
-        max-width: 90%;
+        flex-direction: column;
       }
 
-      .card-img {
-        width: 30%;
+      .card-img-wrapper {
+        width: 100%;
+        height: 200px;
       }
 
-      h1{
-      text-align: center;
-      font-size: x-small;
-      padding: 40px;
+      .card-content {
+        padding: 20px;
+      }
+
+      .card-title {
+        font-size: 1.2rem;
+      }
+
+      .card-actions {
+        flex-direction: column;
+      }
     }
 
+    @media screen and (max-width: 480px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Responsive Card without bootstrap haha!</h1>
-  <div class="card">
-    <img class="card-img" src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80" alt="Card Image">
-    <div class="card-content">
-      <div class="card-title">Card Title</div>
-      <div class="card-details">Card Details Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+  <h1>Modern Cards Showcase</h1>
+  <p class="subtitle">No Bootstrap needed, just pure CSS skills</p>
+
+  <div class="cards-container">
+    <!-- Card 1: Horizontal Classic -->
+    <div class="card card-horizontal">
+      <div class="card-img-wrapper">
+        <img class="card-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80" alt="Gourmet Burger">
+        <div class="card-badge">Featured</div>
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <div class="card-title">Gourmet Burger Deluxe</div>
+          <div class="card-subtitle">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Downtown • 2.5 km</span>
+          </div>
+        </div>
+        <div class="card-details">
+          Premium beef patty with melted cheddar, crispy bacon, fresh lettuce, and our secret sauce on a brioche bun.
+        </div>
+        <div class="card-footer">
+          <div class="card-rating">
+            <div class="rating-badge">
+              <i class="fas fa-star"></i>
+              4.8
+            </div>
+            <span class="rating-count">1.2K reviews</span>
+          </div>
+          <div class="card-price">$12.99</div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i>
+            Order Now
+          </button>
+          <button class="btn btn-secondary">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Image Overlay -->
+    <div class="card card-overlay">
+      <div class="card-img-wrapper">
+        <img class="card-img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Pizza">
+        <div class="card-badge">Popular</div>
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <div class="card-title">Margherita Pizza</div>
+          <div class="card-subtitle">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Little Italy • 3.2 km</span>
+          </div>
+        </div>
+        <div class="card-details">
+          Wood-fired thin crust topped with fresh mozzarella, basil, and our signature tomato sauce.
+        </div>
+        <div class="card-footer">
+          <div class="card-rating">
+            <div class="rating-badge">
+              <i class="fas fa-star"></i>
+              4.9
+            </div>
+            <span class="rating-count">2.8K reviews</span>
+          </div>
+          <div class="card-price">$15.99</div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i>
+            Order Now
+          </button>
+          <button class="btn btn-secondary">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Minimal Bordered -->
+    <div class="card card-minimal">
+      <div class="card-img-wrapper">
+        <img class="card-img" src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" alt="Ramen">
+        <div class="card-badge">New</div>
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <div class="card-title">Spicy Tonkotsu Ramen</div>
+          <div class="card-subtitle">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Chinatown • 1.8 km</span>
+          </div>
+        </div>
+        <div class="card-details">
+          Rich pork bone broth with handmade noodles, soft-boiled egg, bamboo shoots, and chili oil.
+        </div>
+        <div class="card-footer">
+          <div class="card-rating">
+            <div class="rating-badge">
+              <i class="fas fa-star"></i>
+              4.7
+            </div>
+            <span class="rating-count">856 reviews</span>
+          </div>
+          <div class="card-price">$14.50</div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i>
+            Order Now
+          </button>
+          <button class="btn btn-secondary">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Split Design -->
+    <div class="card card-split">
+      <div class="card-img-wrapper">
+        <img class="card-img" src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=600&q=80" alt="Sushi">
+        <div class="card-badge">Chef's Pick</div>
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <div class="card-title">Premium Sushi</div>
+          <div class="card-subtitle">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Uptown • 4.1 km</span>
+          </div>
+        </div>
+        <div class="card-details">
+          Assorted nigiri and maki rolls with fresh salmon, tuna, yellowtail.
+        </div>
+        <div class="card-footer">
+          <div class="card-rating">
+            <div class="rating-badge">
+              <i class="fas fa-star"></i>
+              4.9
+            </div>
+            <span class="rating-count">3.1K</span>
+          </div>
+          <div class="card-price">$24.99</div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i>
+            Order Now
+          </button>
+          <button class="btn btn-secondary">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Stacked Info -->
+    <div class="card card-stacked">
+      <div class="card-img-wrapper">
+        <img class="card-img" src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600&q=80" alt="Tacos">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <div class="card-title">Street Style Tacos</div>
+          <div class="card-subtitle">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>West Side • 2.9 km</span>
+          </div>
+        </div>
+        <div class="card-details">
+          Three authentic corn tortilla tacos with seasoned beef, fresh cilantro, onions, and lime with salsa verde.
+        </div>
+        <div class="card-footer">
+          <div class="card-rating">
+            <div class="rating-badge">
+              <i class="fas fa-star"></i>
+              4.6
+            </div>
+            <span class="rating-count">1.5K reviews</span>
+          </div>
+          <div class="card-price">$9.99</div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i>
+            Order Now
+          </button>
+          <button class="btn btn-secondary">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: Compact Horizontal -->
+    <div class="card card-compact">
+      <div class="card-img-wrapper">
+        <img class="card-img" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80" alt="Pasta">
+        <div class="card-badge">Best Seller</div>
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <div class="card-title">Creamy Carbonara</div>
+          <div class="card-subtitle">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Italian Quarter • 3.5 km</span>
+          </div>
+        </div>
+        <div class="card-details">
+          Classic Roman pasta with crispy pancetta, egg yolk, parmesan on fresh fettuccine.
+        </div>
+        <div class="card-footer">
+          <div class="card-rating">
+            <div class="rating-badge">
+              <i class="fas fa-star"></i>
+              4.8
+            </div>
+            <span class="rating-count">2.4K</span>
+          </div>
+          <div class="card-price">$16.50</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 7: Image Top Minimalist -->
+    <div class="card card-minimalist">
+      <div class="card-img-wrapper">
+        <img class="card-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80" alt="Steak">
+        <div class="card-badge">Premium</div>
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <div class="card-title">Ribeye Steak Special</div>
+          <div class="card-subtitle">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Financial District • 5.2 km</span>
+          </div>
+        </div>
+        <div class="card-details">
+          12oz prime ribeye, grilled to perfection, served with garlic mashed potatoes and seasonal vegetables.
+        </div>
+        <div class="card-footer">
+          <div class="card-rating">
+            <div class="rating-badge">
+              <i class="fas fa-star"></i>
+              4.9
+            </div>
+            <span class="rating-count">1.8K reviews</span>
+          </div>
+          <div class="card-price">$32.99</div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i>
+            Order Now
+          </button>
+          <button class="btn btn-secondary">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8: Overlay Dark -->
+    <div class="card card-overlay">
+      <div class="card-img-wrapper">
+        <img class="card-img" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="Dessert">
+        <div class="card-badge">Sweet</div>
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <div class="card-title">Chocolate Lava Cake</div>
+          <div class="card-subtitle">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Midtown • 1.5 km</span>
+          </div>
+        </div>
+        <div class="card-details">
+          Warm chocolate cake with a molten center, served with vanilla ice cream and fresh berries.
+        </div>
+        <div class="card-footer">
+          <div class="card-rating">
+            <div class="rating-badge">
+              <i class="fas fa-star"></i>
+              5.0
+            </div>
+            <span class="rating-count">987 reviews</span>
+          </div>
+          <div class="card-price">$8.99</div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i>
+            Order Now
+          </button>
+          <button class="btn btn-secondary">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 9: Minimal Bordered -->
+    <div class="card card-minimal">
+      <div class="card-img-wrapper">
+        <img class="card-img" src="https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&q=80" alt="Smoothie Bowl">
+        <div class="card-badge">Healthy</div>
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <div class="card-title">Acai Power Bowl</div>
+          <div class="card-subtitle">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Beach Side • 6.3 km</span>
+          </div>
+        </div>
+        <div class="card-details">
+          Organic acai blend topped with granola, fresh berries, banana, coconut flakes, and honey drizzle.
+        </div>
+        <div class="card-footer">
+          <div class="card-rating">
+            <div class="rating-badge">
+              <i class="fas fa-star"></i>
+              4.7
+            </div>
+            <span class="rating-count">654 reviews</span>
+          </div>
+          <div class="card-price">$11.50</div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i>
+            Order Now
+          </button>
+          <button class="btn btn-secondary">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
+
+  <script>
+    // Add click animation to cards
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (!e.target.closest('.btn')) {
+          this.style.transform = 'scale(0.98)';
+          setTimeout(() => {
+            this.style.transform = '';
+          }, 200);
+        }
+      });
+    });
+
+    // Button interactions
+    document.querySelectorAll('.btn-primary').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.innerHTML = '<i class="fas fa-check"></i> Added!';
+        this.style.background = '#48C479';
+        setTimeout(() => {
+          this.innerHTML = '<i class="fas fa-shopping-cart"></i> Order Now';
+          this.style.background = '';
+        }, 1500);
+      });
+    });
+
+    document.querySelectorAll('.btn-secondary').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        const icon = this.querySelector('i');
+        icon.classList.toggle('fas');
+        icon.classList.toggle('far');
+        
+        if (icon.classList.contains('fas')) {
+          this.style.background = '#E23744';
+          this.style.color = 'white';
+        } else {
+          this.style.background = '';
+          this.style.color = '#E23744';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
